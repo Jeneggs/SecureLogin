@@ -1,0 +1,48 @@
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.full-container{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    position: absolute;
+
+}
+
+.signup-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 35%;
+    height: 82%;
+    margin-top: 5%;
+    outline: 1px solid grey;
+    row-gap: 1.5vw;
+}
+
+.signup-header{
+    margin: 5% 0 0 0;
+}
+.signup-header h2{
+    font-size: 2vw;
+    font-weight: 600;
+    color: #333;
+}
+
+.form-check{
+    padding-top: 2%;
+    opacity: 0.8;
+    font-size: small;
+}
+
+.submit-button{
+    padding-top: 4vh;
+}
+
+.submit-button button{
+    width: 100%;
+}
