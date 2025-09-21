@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    <?php require_once "heading.html"; ?>
     <div class="full-container">
         <div class="welcome-screen">
             <h1>Welcome</h1>
