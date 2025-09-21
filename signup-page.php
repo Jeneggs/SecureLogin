@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    <?php require_once "heading.html"; ?>
     <div class="full-container">
         <div class="signup-container">
             <div class="signup-header">
