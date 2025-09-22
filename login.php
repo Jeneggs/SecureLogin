@@ -5,6 +5,7 @@ session_start();
 //Sanitize user input to prevent XSS
 $username_input = htmlspecialchars($_POST['username']);
 $password_input = htmlspecialchars($_POST['password']);
+$error_message = "";
 
 //Prepared statement to prevent SQL injection
 $stmt = $pdo->prepare("SELECT id, username, password FROM users WHERE username = :username");
@@ -20,10 +21,11 @@ if ($user){
         echo "Login successful. Welcome, " . htmlspecialchars($user['username']) . "!";
     }
     else {
-        echo "Incorrect password.";
+        $error_message = "Incorrect password.";
     }
 }
 else {
-    echo "User not found.";
+    $error_message =  "User not found.";
 }
+include 'login-page.php';
 ?>
