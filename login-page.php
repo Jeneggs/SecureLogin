@@ -4,15 +4,23 @@
 
 $username_input = "";
 $password_input = "";
+
+
 $error_message = "";
+if (isset($_SESSION['error_message'])) {
+    $error_message = $_SESSION['error_message'];
+    unset($_SESSION['error_message']);
+    session_write_close();
+}
 
 
 // Only assign values if form was submitted
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $username_input = isset($_POST['username']) ? htmlspecialchars($_POST['username']) : "";
     $password_input = isset($_POST['password']) ? htmlspecialchars($_POST['password']) : "";
-
 }
+
+
 
 
 ?>
@@ -52,12 +60,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     </div>
 
                     <div class="login-button-container">
-                        <?php if ($_SERVER["REQUEST_METHOD"] === "POST" && !empty($error_message)): ?>
+                        <?php if (!empty($error_message)): ?>
                             <div role="alert">
                                 <p class="text-danger"><?php echo htmlspecialchars($error_message); ?></p>
-                                
                             </div>
-
+                            
                         <?php endif; ?>
 
                         <button type="submit" class="login-button btn btn-danger">Login</button>

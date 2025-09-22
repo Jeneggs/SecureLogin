@@ -2,6 +2,7 @@
 require_once 'db_connect.php';
 session_start();
 
+
 //Sanitize user input to prevent XSS
 $username_input = htmlspecialchars($_POST['username']);
 $password_input = htmlspecialchars($_POST['password']);
@@ -20,14 +21,15 @@ if ($user){
     if(password_verify($password_input, $user['password'])){
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['username'] = $user['username'];
-        echo "Login successful. Welcome, " . htmlspecialchars($user['username']) . "!";
+        echo "Login successful. Welcome, " .
+        htmlspecialchars($user['username']) . "!";
     }
     else {
-        $error_message = "Incorrect password.";
+        $_SESSION['error_message'] = "Incorrect password, try again.";
     }
 }
 else {
-    $error_message =  "User not found.";
+    $_SESSION['error_message'] = "Incorrect username, try again";
 }
 include 'login-page.php';
 ?>
