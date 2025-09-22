@@ -21,7 +21,7 @@
                 <form action="signup.php" method="POST">
 
                     <div class="username-field input-group mb-3">
-                        <input type="text" class="username-field form-control" id="username" placeholder="Username"
+                        <input type="text" class="username-field form-control" id="username" name="username" placeholder="Username"
                             aria-label="username" aria-describedby="basic-addon1" required>
                     </div>
 
