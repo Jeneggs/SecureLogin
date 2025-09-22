@@ -19,7 +19,6 @@
         </div>
         <div class="login-form">
             <h1>Sign in</h1>
-            
             <form action="login.php" method="POST">
                 <div class="username-field input-group mb-3">
                     <input type="text" class="username-field form-control" id="username" name="username"
