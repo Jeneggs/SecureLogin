@@ -39,3 +39,9 @@
     color: #333;
     padding-top: 5rem;
 }
+
+.hidden {
+  display: none;
+  color: red;
+  margin-top: 10px;
+}

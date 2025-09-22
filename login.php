@@ -14,6 +14,8 @@ $stmt->execute();
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
 //Checks if username is in the database and verifies the password
+
+
 if ($user){
     if(password_verify($password_input, $user['password'])){
         $_SESSION['user_id'] = $user['id'];
