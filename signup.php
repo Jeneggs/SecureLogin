@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $hashed_password = password_hash($password_input, PASSWORD_DEFAULT);
 
             
-            $stmt = $pdo->prepare("INSERT INTO users (username, password, first_name, last_name, email) 
+            $stmt = $pdo->prepare("INSERT INTO users (username, password, first_name, last_name, email)
                                     VALUES (:username, :password, :first_name, :last_name, :email)");
             $stmt->bindParam(':username', $username_input);
             $stmt->bindParam(':password', $hashed_password);
