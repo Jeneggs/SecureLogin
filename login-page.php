@@ -1,7 +1,5 @@
 <?php require_once 'db_connect.php' ;
 
-
-
 $username_input = "";
 $password_input = "";
 
@@ -19,10 +17,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $username_input = isset($_POST['username']) ? htmlspecialchars($_POST['username']) : "";
     $password_input = isset($_POST['password']) ? htmlspecialchars($_POST['password']) : "";
 }
-
-
-
-
 ?>
 
 
@@ -64,17 +58,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                             <div role="alert">
                                 <p class="text-danger"><?php echo htmlspecialchars($error_message); ?></p>
                             </div>
-                            
                         <?php endif; ?>
 
-                        <button type="submit" class="login-button btn btn-danger">Login</button>
+                        <div class="login-button-container d-flex gap-2">
+                            <button type="submit" class="login-button btn btn-danger">Login</button>
+                            <a href="signup-page.php" class="login-button btn btn-danger">Sign Up</a>
+                        </div>
                     </div>
                 </form>
-                <div class="login-button-container d-flex gap-2">
-                    <button type="submit" class="login-button btn btn-danger">Login</button>
-                    <a href="signup-page.php" class="login-button btn btn-danger">Sign Up</a>
-                </div>
-            </form>
             </div>
         </div>
         </div>
