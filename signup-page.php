@@ -12,6 +12,21 @@
 
 <body>
     <?php require_once "heading.html"; ?>
+
+<?php if (!empty($_SESSION['error_message'])): ?> 
+    <div class="alert alert-danger" role="alert">
+        <?php echo $_SESSION['error_message']; unset($_SESSION['error_message']); ?> 
+    </div>
+<?php endif; ?>
+
+<?php if (!empty($_SESSION['success_message'])): ?>
+    <div class="alert alert-success" role="alert">
+        <?php echo $_SESSION['success_message']; unset($_SESSION['success_message']); ?>
+    </div>
+<?php endif; ?>
+
+
+
     <div class="full-container">
         <div class="signup-container">
             <div class="signup-header">
@@ -58,10 +73,10 @@
                             name="confirm-password" placeholder="Confirm password" aria-label="Password"
                             aria-describedby="basic-addon1" required>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="checkDefault">
-                        <label class="form-check-label" for="checkDefault">
-                            I agree to the <a href="">Privacy policy</a>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" name="privacy-policy" id="privacy-policy" required>
+                        <label class="form-check-label" for="privacy-policy">
+                            I agree to the <a href="privacy-policy.php" target="_blank">Privacy Policy</a>
                         </label>
                     </div>
                     <div class="submit-button">
