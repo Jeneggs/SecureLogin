@@ -31,8 +31,9 @@
                         placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" required>
                 </div>
 
-                <div class="login-button-container">
+                <div class="login-button-container d-flex gap-2">
                     <button type="submit" class="login-button btn btn-danger">Login</button>
+                    <a href="signup-page.php" class="login-button btn btn-danger">Sign Up</a>
                 </div>
             </form>
             </div>
