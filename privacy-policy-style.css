@@ -1,0 +1,36 @@
+.full-container{
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    justify-content: center;
+    font-size: small;
+
+}
+
+.signup-container{
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    max-width: 550px;
+    height: auto;
+    max-height: 550px;
+    outline: 1px solid grey;
+    border-radius: 8px;;
+    margin-top: 5%;
+    overflow-y: auto;
+}
+
+.signup-container h2{
+    font-size: 1.5rem;
+}
+
+
+.signup-container h1, .signup-container section, .signup-container p{
+    padding: 0 5% 2% 5%;
+}
+
+.signup-container h1{
+    padding: 4% 5% 4    % 5%;
+}
+
+
