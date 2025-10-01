@@ -25,4 +25,5 @@ if ($user && password_verify($password_input, $user['password'])) {
     $_SESSION['error_message'] = "Invalid username or password.";
 }
 include 'login-page.php';
+
 ?>

@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
                     <div class="password-field input-group mb-3">
                         <input type="password" class="password-field form-control" id="password" name="password"
-                            placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" maxlength="8" minlength="8" required>
+                            placeholder="Password" aria-label="Password" aria-describedby="basic-addon1"  minlength="8" required>
                     </div>
 
                     <div class="login-button-container">
@@ -65,8 +65,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                             <a href="signup-page.php" class="login-button btn btn-danger">Sign Up</a>
                         </div>
                     </div>
+                    <?php  ?>
                 </form>
             </div>
+
         </div>
         </div>
 
