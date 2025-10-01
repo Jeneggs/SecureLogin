@@ -13,17 +13,19 @@
 <body>
     <?php require_once "heading.html"; ?>
 
-<?php if (!empty($_SESSION['error_message'])): ?> 
-    <div class="alert alert-danger" role="alert">
-        <?php echo $_SESSION['error_message']; unset($_SESSION['error_message']); ?> 
-    </div>
-<?php endif; ?>
+    <?php if (!empty($_SESSION['error_message'])): ?>
+        <div class="alert alert-danger" role="alert">
+            <?php echo $_SESSION['error_message'];
+            unset($_SESSION['error_message']); ?>
+        </div>
+    <?php endif; ?>
 
-<?php if (!empty($_SESSION['success_message'])): ?>
-    <div class="alert alert-success" role="alert">
-        <?php echo $_SESSION['success_message']; unset($_SESSION['success_message']); ?>
-    </div>
-<?php endif; ?>
+    <?php if (!empty($_SESSION['success_message'])): ?>
+        <div class="alert alert-success" role="alert">
+            <?php echo $_SESSION['success_message'];
+            unset($_SESSION['success_message']); ?>
+        </div>
+    <?php endif; ?>
 
 
 
@@ -36,45 +38,49 @@
                 <form action="signup.php" method="POST">
 
                     <div class="username-field input-group mb-3">
-                        <input type="text" class="username-field form-control" id="username" name="username" placeholder="Username"
-                            aria-label="username" aria-describedby="basic-addon1" required>
+                        <input type="text" class="username-field form-control" id="username" name="username"
+                            placeholder="Username" aria-label="username" aria-describedby="basic-addon1" maxlength="20"
+                            minlength="5" required>
                     </div>
 
                     <div class="first-name-field input-group mb-3">
                         <input type="text" class="first-name-field form-control" name="first-name"
-                            placeholder="First Name" aria-label="First Name" required>
+                            placeholder="First Name" aria-label="First Name" maxlength="15" minlength="3" required>
                         <span class="input-group-text"> </span>
                         <input type="text" class="first-name-field form-control" name="last-name"
-                            placeholder="Last Name" aria-label="Last Name" required>
+                            placeholder="Last Name" aria-label="Last Name" maxlength="15" minlength="3" required>
                     </div>
 
                     <div class="email-field input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">@</span>
                         <input type="text" class="email-field form-control" id="email" name="email" placeholder="Email"
-                            aria-label="username" aria-describedby="basic-addon1" required>
+                            aria-label="username" aria-describedby="basic-addon1" maxlength="65" minlength="6" required>
                     </div>
 
                     <div class="phone-number-field input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">+63</span>
-                        <input type="number" class="phone-number-field form-control" id="phone-number"
-                            name="phone-number" placeholder="Phone Number" aria-label="Phone Number"
-                            aria-describedby="basic-addon1"  required>
+                        <input type="tel" class="phone-number-field form-control" id="phone-number" name="phone-number"
+                            placeholder="Phone Number" aria-label="Phone Number" aria-describedby="basic-addon1"
+                            pattern="\d{10}" maxlength="10" required>
                     </div>
 
                     <div class="password-field input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">*</span>
                         <input type="password" class="password-field form-control" id="password" name="password"
-                            placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" required>
+                            placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" maxlength="8"
+                            minlength="8" required>
                     </div>
 
                     <div class="confirm-password-field input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">*</span>
                         <input type="password" class="confirm-password-field form-control" id="confirm-password"
                             name="confirm-password" placeholder="Confirm password" aria-label="Password"
-                            aria-describedby="basic-addon1" required>
+                            aria-describedby="basic-addon1" maxlength="8"
+                            minlength="8" required>
                     </div>
                     <div class="form-check mb-3">
-                        <input class="form-check-input" type="checkbox" name="privacy-policy" id="privacy-policy" required>
+                        <input class="form-check-input" type="checkbox" name="privacy-policy" id="privacy-policy"
+                            required>
                         <label class="form-check-label" for="privacy-policy">
                             I agree to the <a href="privacy-policy.php" target="_blank">Privacy Policy</a>
                         </label>
