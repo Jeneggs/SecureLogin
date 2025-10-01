@@ -8,6 +8,13 @@
     <link rel="stylesheet" href="./signup-style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Google reCAPTCHA -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script>
+        function enableSubmitBtn() {
+            document.getElementById("mySubmitBtn").disabled = false;
+        }
+    </script>
 </head>
 
 <body>
@@ -84,6 +91,10 @@
                         <label class="form-check-label" for="privacy-policy">
                             I agree to the <a href="privacy-policy.php" target="_blank">Privacy Policy</a>
                         </label>
+                    </div>
+                    <!-- Google reCAPTCHA -->
+                    <div class="mb-3">
+                        <div class="g-recaptcha" data-sitekey="6Le8FNsrAAAAAKSPhSMRcohOit1rZb4awy1WsB7o" data-callback="enableSubmitBtn"></div>
                     </div>
                     <div class="submit-button">
                         <button type="submit" class="btn btn-danger">Register</button>
