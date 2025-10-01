@@ -74,16 +74,14 @@
                     <div class="password-field input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">*</span>
                         <input type="password" class="password-field form-control" id="password" name="password"
-                            placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" maxlength="8"
-                            minlength="8" required>
+                            placeholder="Password" aria-label="Password" aria-describedby="basic-addon1"minlength="8" maxlength="25" required>
                     </div>
 
                     <div class="confirm-password-field input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">*</span>
                         <input type="password" class="confirm-password-field form-control" id="confirm-password"
                             name="confirm-password" placeholder="Confirm password" aria-label="Password"
-                            aria-describedby="basic-addon1" maxlength="8"
-                            minlength="8" required>
+                            aria-describedby="basic-addon1" minlength="8" maxlength="25" required>
                     </div>
                     <div class="form-check mb-3">
                         <input class="form-check-input" type="checkbox" name="privacy-policy" id="privacy-policy"

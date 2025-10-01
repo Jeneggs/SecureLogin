@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Blocked usernames
     $blocked = ["admin", "administrator", "root"];
 
-    // ✅ CAPTCHA CHECK
+    // CAPTCHA CHECK
     if (isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'])) {
         $secretKey = '6Le8FNsrAAAAAN8m39JF-6rGXd9NKfXCPhhP6ZUP';
         $verifyResponse = file_get_contents(
@@ -28,10 +28,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         );
         $response = json_decode($verifyResponse);
 
-        // ✅ If Google reCAPTCHA API returned success
+        //  If Google reCAPTCHA API returned success
         if ($response && $response->success) {
 
-            // 🔐 Validation checks
+            // Validation checks
             if (!$privacy_policy) {
                 $_SESSION['error_message'] = "You must agree to the Privacy Policy before signing up.";
             } elseif (empty($username_input) || empty($first_name_input) || empty($last_name_input) || empty($email_input) || empty($password_input) || empty($confirm_password)) {
@@ -51,7 +51,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             } elseif ($password_input !== $confirm_password) {
                 $_SESSION['error_message'] = "Passwords do not match.";
             } else {
-                // ✅ DB check & insert
                 try {
                     $stmt = $pdo->prepare("SELECT ID FROM users WHERE username = :username OR email = :email");
                     $stmt->execute([':username' => $username_input, ':email' => $email_input]);

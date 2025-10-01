@@ -45,12 +45,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <form action="login.php" method="POST">
                     <div class="username-field input-group mb-3">
                         <input type="text" class="username-field form-control" id="username" name="username"
-                            placeholder="Username" aria-label="username" aria-describedby="basic-addon1" maxlength="20" minlength="5" required>
+                            placeholder="Username" aria-label="username" aria-describedby="basic-addon1" maxlength="25" minlength="5" required>
                     </div>
 
                     <div class="password-field input-group mb-3">
                         <input type="password" class="password-field form-control" id="password" name="password"
-                            placeholder="Password" aria-label="Password" aria-describedby="basic-addon1"  minlength="8" required>
+                            placeholder="Password" aria-label="Password" aria-describedby="basic-addon1"  minlength="8" maxlength="25" required>
                     </div>
 
                     <div class="login-button-container">
